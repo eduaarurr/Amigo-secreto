@@ -70,7 +70,7 @@ function sortearAmigo() {
     } while (amigosSorteados.includes(amigoSorteado)); // Evita repetir nombres ya sorteados
 
     amigosSorteados.push(amigoSorteado); // Agregar el amigo sorteado a la lista de sorteados
-
+    
     const resultadoI = document.getElementById("resultado");
     resultadoI.innerHTML = `<li>${amigoSorteado}</li>`;
 }
