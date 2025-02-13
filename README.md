@@ -54,4 +54,4 @@ Este proyecto permite realizar sorteos de amigos de forma aleatoria y sin repeti
 
 1. Clona este repositorio:
    ```bash
-   git clone <url_del_repositorio>
+   git clone <https://github.com/eduaarurr/Amigo-secreto.git>
