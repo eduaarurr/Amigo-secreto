@@ -30,15 +30,15 @@ Este proyecto permite realizar sorteos de amigos de forma aleatoria y sin repeti
    - Ingresa un nombre en el campo de texto.
    - Haz clic en el botón **Agregar** para añadir el nombre a la lista.
    - **Validación**: El nombre debe ser solo letras y espacios.
-   - ![Agregar Amigo]()
+   - Agregar Amigo
 
 2. **Sortear un Amigo**
    - Haz clic en **Sortear** para elegir un amigo al azar de la lista.
    - Si todos los amigos han sido sorteados, aparecerá un botón para reiniciar.
-   - ![Sortear](
+   - Sortear
 3. **Reiniciar el Sorteo**
    - Después de que todos los amigos hayan sido sorteados, puedes hacer clic en el botón **Reiniciar** para borrar la lista y comenzar de nuevo.
-   - ![Reiniciar]()
+   - Reiniciar
 
 ---
 
