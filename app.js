@@ -1,6 +1,6 @@
 // Lista de amigos vacía
 let amigos = [];
-let amigosSorteados = []; // Lista para llevar el control de los sorteos
+let amigosSorteados = [];
 
 // Función para agregar un amigo
 function agregarAmigo() {
@@ -13,7 +13,7 @@ function agregarAmigo() {
         return;
     }
 
-    // Validación de solo letras (sin números ni caracteres especiales)
+    // Validación de solo letras y espacios
     const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
     if (!regex.test(nombreAmigo)) {
         alert("Ingrese solo letras y espacios");
@@ -49,17 +49,18 @@ function actualizarLista() {
     });
 }
 
-// Función para sortear un amigo al azar sin repetir hasta que todos sean sorteados
+// Función para sortear un amigo al azar sin repetir
 function sortearAmigo() {
-    if (amigos.length === 0) {
-        alert("No hay amigos para sortear, agrega los nombres de ellos.");
+    if (amigos.length < 2) {
+        alert("Debes ingresar al menos 2 nombres para poder sortear.");
         return;
     }
 
-    // Si ya se han sorteado todos, reiniciar la lista de sorteos
+    // Si ya se han sorteado todos, mostrar el botón de reinicio
     if (amigosSorteados.length === amigos.length) {
-        alert("Todos los amigos han sido sorteados. Se reiniciará el sorteo.");
-        amigosSorteados = [];
+        alert("Todos los amigos han sido sorteados.");
+        document.getElementById("botonReiniciar").style.display = "block"; // Mostrar el botón
+        return;
     }
 
     let amigoSorteado;
@@ -73,3 +74,20 @@ function sortearAmigo() {
     const resultadoI = document.getElementById("resultado");
     resultadoI.innerHTML = `<li>${amigoSorteado}</li>`;
 }
+
+// Función para reiniciar completamente (borrar amigos y sorteos)
+function reiniciarSorteo() {
+    amigos = []; // Vaciar la lista de amigos
+    amigosSorteados = []; // Vaciar la lista de sorteados
+
+    document.getElementById("listaAmigos").innerHTML = ""; // Borrar lista en la interfaz
+    document.getElementById("resultado").innerHTML = ""; // Borrar resultado
+    document.getElementById("botonReiniciar").style.display = "none"; // Ocultar el botón de reinicio
+
+    alert("Sorteo reiniciado. La lista de amigos ha sido borrada.");
+}
+
+// Ocultar el botón de reinicio al cargar la página
+window.onload = function() {
+    document.getElementById("botonReiniciar").style.display = "none"; // Asegurarse de que esté oculto
+};
