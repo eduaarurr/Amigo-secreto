@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Inter", sans-serif;
 }
 
 .main-content {
@@ -28,6 +29,7 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    max-width: 800px; /* Añadí un max-width para evitar que se estire mucho */
 }
 
 /* Banner */
@@ -37,6 +39,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 0 0;
+    text-align: center; /* Centrado para mejorar el aspecto */
 }
 
 /* Sección de entrada */
@@ -62,7 +65,7 @@ body {
 }
 
 .section-title {
-    font-family: "Inter", serif;
+    font-family: "Inter", sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
@@ -81,15 +84,17 @@ body {
 
 .input-name {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #000;
     border-radius: 25px 0 0 25px;
     font-size: 16px;
 }
 
 .button-container {
-    width: 300px;
+    width: 100%;
+    display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 /* Estilos de entrada de texto */
@@ -109,10 +114,13 @@ button {
     padding: 15px 30px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
-    border: 2px solid #000;
+    border: 2px solid #3498db; /* Borde azul para darle un toque moderno */
+    background-color: #fff; /* Fondo blanco */
+    color: #3498db; /* Color de texto azul */
     border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
 }
 
 .button-add {
@@ -146,17 +154,26 @@ ul {
 .button-draw {
     display: flex;
     align-items: center;
+    justify-content: center; /* Alinea el contenido al centro */
     width: 100%;
-    padding: 10px 40px;
+    padding: 12px 40px; /* Ajusté un poco el padding para más espacio */
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
-}
-
-.button-draw img {
-    margin-right: 40px;
+    border: 2px solid transparent; /* Borde transparente para suavizar el hover */
+    border-radius: 30px; /* Bordes más redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para los cambios */
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    background-color: var(--color-button-hover, #3498db); /* Un color diferente cuando se pasa el mouse */
+    color: var(--color-button-text-hover, #fff); /* Cambiar color de texto en hover */
+    border-color: var(--color-button-hover-border, #2980b9); /* Color del borde en hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+.button-draw img {
+    margin-right: 20px; /* Ajusté el margen para los íconos */
 }
